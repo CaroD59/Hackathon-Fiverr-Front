@@ -11,7 +11,7 @@ const SCards = styled.div`
     background-color: #ff80ae;
     color: white;
     width: 25vw;
-    height: 60vh;
+    height: 63vh;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -22,7 +22,7 @@ const SCards = styled.div`
     background-color: #d0e500;
     color: white;
     width: 25vw;
-    height: 60vh;
+    height: 63vh;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -34,7 +34,7 @@ const SCards = styled.div`
     background-color: #ff7640;
     color: white;
     width: 25vw;
-    height: 60vh;
+    height: 63vh;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -47,10 +47,12 @@ const SCards = styled.div`
       Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
       'Segoe UI Symbol';
     font-size: 21px;
+    color: #f5f5f5;
+    font-weight: 500;
   }
 
   img {
-    width: 70%;
+    width: 60%;
     height: 55%;
     border-radius: 10px;
   }
