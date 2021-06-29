@@ -1,10 +1,10 @@
 import { Switch, Route } from 'react-router-dom';
 import StyledApp from './components/Sapp';
-import Header from './components/Header/index';
-import Footer from './components/Footer/index';
-import Description from './components/Description/index';
-import Cards from './components/Cards/index';
-import CardsDescription from './components/CardsDescription/index';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Description from './components/Description';
+import Cards from './components/Cards';
+import CardsDescription from './components/CardsDescription';
 import BarNav from './components/BarNav';
 
 function App() {
@@ -14,8 +14,8 @@ function App() {
       <Description />
       <BarNav />
       <Switch>
-        <Route exact path="/" component={Cards} />
-        <Route path="/profile/:id" component={CardsDescription} />
+        <Route exact path="/profile" component={Cards} />
+        <Route path="/description/:id" component={CardsDescription} />
       </Switch>
       <Footer />
     </StyledApp>
