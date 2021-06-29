@@ -1,11 +1,11 @@
-import SBarNav from './style';
+import SHeader from './style';
 
 function Header() {
   return (
-    <SBarNav>
+    <SHeader>
       <img src="/image/Frame_1.png" alt="logo" />
       <div className="header" />
-    </SBarNav>
+    </SHeader>
   );
 }
 export default Header;
