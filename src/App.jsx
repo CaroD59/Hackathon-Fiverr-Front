@@ -12,12 +12,11 @@ function App() {
     <StyledApp className="App">
       <Header />
       <Description />
+      <BarNav />
       <Switch>
         <Route exact path="/" component={Cards} />
         <Route path="/profile/:id" component={CardsDescription} />
       </Switch>
-      <BarNav />
-      <Cards />
       <Footer />
     </StyledApp>
   );
