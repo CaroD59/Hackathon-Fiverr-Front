@@ -1,11 +1,13 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-function MsgList() {
+function CommentsList() {
   const [messages, setMessages] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
-    axios.get('http://localhost:5050/profile').then(({ data }) => {
+    axios.get(`http://localhost:5050/profile/:${id}`).then(({ data }) => {
       setMessages(data);
     });
   }, []);
@@ -18,4 +20,4 @@ function MsgList() {
     </ul>
   );
 }
-export default MsgList;
+export default CommentsList;

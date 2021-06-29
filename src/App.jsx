@@ -13,7 +13,7 @@ function App() {
       <Description />
       <Switch>
         <Route exact path="/" component={Cards} />
-        <Route path="/profile" component={CardsDescription} />
+        <Route path="/profile/:id" component={CardsDescription} />
       </Switch>
       <Footer />
     </StyledApp>
