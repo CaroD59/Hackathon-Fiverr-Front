@@ -14,7 +14,7 @@ const StyledDesription = styled.div`
     text-align: left;
   }
   .imageDescription {
-    width: 30vw;
+    width: 44vw;
     margin-right: 5vw;
     margin-left: 10vw;
   }
