@@ -7,7 +7,7 @@ function Description() {
         <div>
           <img
             className="imageDescription"
-            src="./images/Photography.png"
+            src="/images/Photography.png"
             alt="ImageDescription"
           />
         </div>
