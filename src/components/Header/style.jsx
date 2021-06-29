@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const SBarNav = styled.div`
+const SHeader = styled.div`
   height: 15%;
   background-color: #003912;
   img {
@@ -8,4 +8,4 @@ const SBarNav = styled.div`
   }
 `;
 
-export default SBarNav;
+export default SHeader;
