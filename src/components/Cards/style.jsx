@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 const SCards = styled.div`
+  background-color: #f0f4ff;
   .cards {
     margin-left: 40px;
     display: flex;
@@ -8,38 +9,31 @@ const SCards = styled.div`
     justify-content: space-around;
   }
   .card {
-    background-color: #ff80ae;
+    /* background-color: #ff80ae; */
+    background-color: white;
+    -webkit-box-shadow: 5px 3px 5px 6px rgba(183, 183, 183, 0.4);
+    box-shadow: 5px 3px 5px 6px rgba(183, 183, 183, 0.4);
     color: white;
-    width: 25vw;
-    height: 63vh;
-    border-radius: 10px;
+    width: 22vw;
+    height: 70vh;
+    border-radius: 21px;
+    color: #ff80ae;
+    font-size: 18px;
+    font-weight: 700;
+    color: #404145;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-  }
-  .card1 {
-    background-color: #d0e500;
-    color: white;
-    width: 25vw;
-    height: 63vh;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+    text-align: center;
     align-items: center;
   }
 
-  .card2 {
-    background-color: #ff7640;
-    color: white;
-    width: 25vw;
-    height: 63vh;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+  .tech {
+    font-weight: 100;
+    color: #62646a;
+  }
+
+  .icon {
+    width: 50px;
   }
 
   h1 {
@@ -47,14 +41,14 @@ const SCards = styled.div`
       Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
       'Segoe UI Symbol';
     font-size: 21px;
-    color: #f5f5f5;
-    font-weight: 500;
+    color: #62646a;
+    font-weight: 400;
   }
 
   img {
-    width: 60%;
-    height: 55%;
-    border-radius: 10px;
+    width: 43%;
+    border-radius: 90px;
+    margin-top: 23px;
   }
 `;
 export default SCards;
