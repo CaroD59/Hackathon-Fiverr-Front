@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom';
 import StyleComment from './style';
 
 function InputComment() {
-  const [inputContent, setContent] = useState('');
-  const [inputAuthor, setAuthor] = useState('');
+  const [content, setContent] = useState('');
+  const [author, setAuthor] = useState('');
   const { id } = useParams();
 
   const handleChangeContent = (evt) => {
@@ -19,8 +19,8 @@ function InputComment() {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const dataToSend = {
-      author: inputAuthor,
-      content: inputContent,
+      author,
+      content,
     };
     axios.post(`http://localhost:5050/description/${id}`, dataToSend);
   };
@@ -34,7 +34,7 @@ function InputComment() {
             <div className="AuthorInput">
               <input
                 type="text"
-                value={inputAuthor}
+                value={author}
                 onChange={handleChangeAuthor}
                 placeholder="Ecrivez votre prénom ici"
               />
@@ -42,13 +42,14 @@ function InputComment() {
             <div className="ContentInput">
               <textarea
                 type="text"
-                value={inputContent}
+                value={content}
                 onChange={handleChangeContent}
                 placeholder="Ecrivez votre commentaire ici"
               />
             </div>
             <div className="Submit">
               <input type="submit" value="Envoyer" />
+              <input type="hidden" name="profileId" value={id} />
             </div>
           </div>
         </form>
