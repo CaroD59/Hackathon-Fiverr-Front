@@ -19,6 +19,7 @@ function InputComment() {
   const handleSubmit = (evt) => {
     evt.preventDefault();
     const dataToSend = {
+      id,
       author,
       content,
     };

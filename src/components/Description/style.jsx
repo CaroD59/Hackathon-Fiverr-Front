@@ -7,16 +7,23 @@ const StyledDesription = styled.div`
 
   .Description {
     display: flex;
-    color: #000000;
+    color: #404145;
+    font-weight: 500;
+    height: 78.7vh;
   }
   .textDesciption {
-    width: 50vw;
-    text-align: left;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+      Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+      'Segoe UI Symbol';
+    letter-spacing: 1px;
+    align-self: center;
+    margin: 30px;
+    font-size: 25px;
   }
   .imageDescription {
-    width: 44vw;
+    /*  width: 44vw;
     margin-right: 5vw;
-    margin-left: 10vw;
+    margin-left: 10vw; */
   }
 `;
 export default StyledDesription;
