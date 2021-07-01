@@ -1,32 +1,47 @@
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import SCards from './style';
 
 function Cards() {
+  const [card, setCard] = useState([]);
+  const history = useHistory();
+
+  const appHandler = (id) => {
+    history.push(`/description/${id}`);
+  };
+
+  useEffect(() => {
+    axios.get(`http://localhost:5050/profile`).then(({ data }) => {
+      setCard(data);
+    });
+  }, []);
+
   return (
     <SCards>
       <div className="cards">
-        <div className="card">
-          <img
-            src="https://fac.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2FFAC.2Fvar.2Ffemmeactuelle.2Fstorage.2Fimages.2Famour.2Fcoaching-amoureux.2Fcest-quoi-belle-femme-temoignages-43206.2F14682626-1-fre-FR.2Fc-est-quoi-une-belle-femme-temoignages.2Ejpg/1200x1200/quality/80/crop-from/center/c-est-quoi-une-belle-femme-temoignages.jpeg"
-            alt="avatar"
-          />
-          <h1> developpeur web </h1>
-        </div>
-
-        <div className="card1">
-          <img
-            src="https://fac.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2FFAC.2Fvar.2Ffemmeactuelle.2Fstorage.2Fimages.2Famour.2Fcoaching-amoureux.2Fcest-quoi-belle-femme-temoignages-43206.2F14682626-1-fre-FR.2Fc-est-quoi-une-belle-femme-temoignages.2Ejpg/1200x1200/quality/80/crop-from/center/c-est-quoi-une-belle-femme-temoignages.jpeg"
-            alt="avatar"
-          />
-          <h1> developpeur web </h1>
-        </div>
-
-        <div className="card2">
-          <img
-            src="https://fac.img.pmdstatic.net/fit/http.3A.2F.2Fprd2-bone-image.2Es3-website-eu-west-1.2Eamazonaws.2Ecom.2FFAC.2Fvar.2Ffemmeactuelle.2Fstorage.2Fimages.2Famour.2Fcoaching-amoureux.2Fcest-quoi-belle-femme-temoignages-43206.2F14682626-1-fre-FR.2Fc-est-quoi-une-belle-femme-temoignages.2Ejpg/1200x1200/quality/80/crop-from/center/c-est-quoi-une-belle-femme-temoignages.jpeg"
-            alt="avatar"
-          />
-          <h1> developpeur web </h1>
-        </div>
+        {card.map((carte) => {
+          return (
+            <>
+              <div
+                className="card"
+                onClick={() => {
+                  appHandler(carte.id);
+                }}
+                onKeyDown={appHandler}
+                aria-hidden="true"
+              >
+                <img src={carte.avatar} alt="avatar" />
+                <p>
+                  {carte.firstname} {carte.lastname}
+                </p>
+                <h1> Développeur Web </h1>
+                <img className="icon" src="./image/tool.png" alt="tool" />
+                <p className="tech">{carte.technos}</p>
+              </div>
+            </>
+          );
+        })}
       </div>
     </SCards>
   );

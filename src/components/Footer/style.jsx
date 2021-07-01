@@ -4,7 +4,7 @@ const StyledFooter = styled.div`
   .contact {
     display: flex;
     background-size: cover;
-    font-size: 1vw;
+    font-size: small;
   }
 
   .bloc {
@@ -21,9 +21,8 @@ const StyledFooter = styled.div`
   .bloc h1 {
     text-align: left;
     margin-left: 30px;
-    font-weight: bold;
-    font-size: 35px;
-    color: #f5f7f7;
+    font-size: 20px;
+    color: white;
   }
 
   .infos {
@@ -31,11 +30,11 @@ const StyledFooter = styled.div`
     justify-content: space-around;
     background-color: #003912;
     color: white;
-    font-size: 1.4vh;
+    font-size: 15px;
   }
 
   .link {
-    color: #f5f7f7;
+    color: #006400;
     margin-right: 7%;
   }
 
