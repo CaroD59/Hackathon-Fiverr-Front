@@ -1,14 +1,13 @@
 import axios from 'axios';
-import { useHistory, useParams } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import SCards from './style';
 
 function Cards() {
   const [card, setCard] = useState([]);
-  const { id } = useParams();
   const history = useHistory();
-  const appHandler = (e) => {
-    e.preventDefault();
+
+  const appHandler = (id) => {
     history.push(`/description/${id}`);
   };
 
@@ -20,16 +19,18 @@ function Cards() {
 
   return (
     <SCards>
-      <div
-        className="cards"
-        onClick={appHandler}
-        onKeyDown={appHandler}
-        aria-hidden="true"
-      >
+      <div className="cards">
         {card.map((carte) => {
           return (
             <>
-              <div className="card">
+              <div
+                className="card"
+                onClick={() => {
+                  appHandler(carte.id);
+                }}
+                onKeyDown={appHandler}
+                aria-hidden="true"
+              >
                 <img src={carte.avatar} alt="avatar" />
                 <p>
                   {carte.firstname} {carte.lastname}
